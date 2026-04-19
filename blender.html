@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Blender: Solar System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html">PORTFOLIO</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="blender.html">Blender</a></li>
+          <li><a href="rotoscope.html">Rotoscope</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="page-head">
+      <p class="tag">Project 01</p>
+      <h1>Blender: Solar System</h1>
+      <p class="subtitle">Minimal structure with editable placeholders.</p>
+    </section>
+
+    <section class="stack">
+      <article class="card">
+        <h2>Video</h2>
+        <div class="placeholder">Embed Blender Solar System video here</div>
+      </article>
+
+      <article class="card">
+        <h2>Description</h2>
+        <p class="empty-text">Add project description here.</p>
+      </article>
+
+      <article class="card">
+        <h2>Method</h2>
+        <p class="empty-text">Add your method/process here.</p>
+      </article>
+
+      <article class="card">
+        <h2>Earth Age Calculator</h2>
+        <div class="calculator">
+          <label for="age">Enter your age on Earth</label>
+          <input id="age" type="number" min="0" placeholder="e.g. 18" />
+          <button id="calcBtn" class="btn">Calculate</button>
+          <div id="result" class="result muted">Your planetary ages will appear here.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Script</h2>
+        <pre class="script-box">Add your script text here.</pre>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Portfolio</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
