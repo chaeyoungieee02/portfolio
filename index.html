@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Home</title>
-  <link rel="stylesheet" href="styles.css?v=102" />
+  <title>Portfolio | Futuristic Landing</title>
+  <link rel="stylesheet" href="styles.css?v=200" />
 </head>
 <body>
+  <div class="bg-stars" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="logo" href="index.html">PORTFOLIO</a>
+      <a class="brand" href="index.html">
+        <span class="brand-icon">i</span>
+        <span class="brand-text">PORTFOLIO SPACE</span>
+      </a>
 
       <nav>
         <ul class="nav-links">
           <li><a class="active" href="index.html">Home</a></li>
 
           <li class="dropdown">
-            <button type="button" class="dropdown-toggle" aria-expanded="false">Blender ▾</button>
+            <a href="blender/index.html">Blender ▾</a>
             <ul class="dropdown-menu">
               <li><a href="blender/video.html">Video</a></li>
               <li><a href="blender/description.html">Description</a></li>
@@ -27,7 +32,7 @@
           </li>
 
           <li class="dropdown">
-            <button type="button" class="dropdown-toggle" aria-expanded="false">Rotoscope ▾</button>
+            <a href="rotoscope/index.html">Rotoscope ▾</a>
             <ul class="dropdown-menu">
               <li><a href="rotoscope/live-action.html">Live Action Video</a></li>
               <li><a href="rotoscope/final-video.html">Final Video</a></li>
@@ -38,35 +43,59 @@
           </li>
         </ul>
       </nav>
+
+      <div class="nav-actions">
+        <a class="pill-btn ghost" href="blender/index.html">Blender</a>
+        <a class="pill-btn" href="rotoscope/index.html">Rotoscope</a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <p class="tag">Minimalist Student Portfolio</p>
-      <h1>Multimedia Portfolio</h1>
-      <p class="subtitle">Only dropdown subitems are clickable.</p>
+  <main class="container hero">
+    <section class="hero-left">
+      <p class="eyebrow">Creative Multimedia Showcase</p>
+      <h1>Landing Page<br />Creative Design</h1>
+      <p class="hero-text">
+        Explore my Blender Solar System and Rotoscope project pages with a modern,
+        futuristic interface. Use the dropdown navigation above to jump directly
+        into each section.
+      </p>
+
+      <div class="dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="cta-row">
+        <a class="pill-btn ghost" href="blender/index.html">OPEN BLENDER</a>
+        <a class="pill-btn ghost" href="rotoscope/index.html">OPEN ROTOSCOPE</a>
+      </div>
     </section>
 
-    <section class="grid two-col">
-      <article class="card">
-        <h2>Blender: Solar System</h2>
-        <p class="muted">Video • Description • Method • Earth Age Calculator • Script</p>
-      </article>
+    <section class="hero-right" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
 
-      <article class="card">
-        <h2>Rotoscope: Live Action</h2>
-        <p class="muted">Live Action • Final Video • Credits • Procedure • Weekly Progress</p>
-      </article>
+      <div class="ribbon r1"></div>
+      <div class="ribbon r2"></div>
+      <div class="ribbon r3"></div>
+      <div class="ribbon r4"></div>
+      <div class="ribbon r5"></div>
+
+      <div class="ring"></div>
+      <div class="lines"></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Portfolio</p>
+    <div class="container footer-wrap">
+      <a href="blender/index.html">Blender</a>
+      <a href="rotoscope/index.html">Rotoscope</a>
+      <a href="rotoscope/weekly-progress.html">Weekly Progress</a>
+      <a href="blender/calculator.html">Earth Age Calculator</a>
     </div>
   </footer>
 
-  <script src="script.js?v=102"></script>
+  <script src="script.js?v=200"></script>
 </body>
 </html>
