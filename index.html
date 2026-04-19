@@ -4,17 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Home</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="logo" href="./index.html">PORTFOLIO</a>
+      <a class="logo" href="index.html">PORTFOLIO</a>
+
       <nav>
         <ul class="nav-links">
-          <li><a class="active" href="./index.html">Home</a></li>
-          <li><a href="./blender.html">Blender</a></li>
-          <li><a href="./rotoscope.html">Rotoscope</a></li>
+          <li><a class="active" href="index.html">Home</a></li>
+
+          <li class="dropdown">
+            <a href="blender/index.html">Blender ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="blender/video.html">Video</a></li>
+              <li><a href="blender/description.html">Description</a></li>
+              <li><a href="blender/method.html">Method</a></li>
+              <li><a href="blender/calculator.html">Earth Age Calculator</a></li>
+              <li><a href="blender/script.html">Script</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="rotoscope/index.html">Rotoscope ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="rotoscope/live-action.html">Live Action Video</a></li>
+              <li><a href="rotoscope/final-video.html">Final Video</a></li>
+              <li><a href="rotoscope/credits.html">Disclaimer / Credits</a></li>
+              <li><a href="rotoscope/procedure.html">Procedure</a></li>
+              <li><a href="rotoscope/weekly-progress.html">Weekly Progress</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -25,7 +46,7 @@
       <p class="tag">Minimalist Student Portfolio</p>
       <h1>Multimedia Portfolio</h1>
       <p class="subtitle">
-        A clean, simple site structure for project presentation.
+        A clean multi-page site: each requirement has its own page.
       </p>
     </section>
 
@@ -33,18 +54,17 @@
       <article class="card">
         <h2>Blender: Solar System</h2>
         <p class="muted">
-          Includes: Video, Description, Method, Earth Age Calculator, Script.
+          Video • Description • Method • Earth Age Calculator • Script
         </p>
-        <a class="btn" href="./blender.html">Open Blender Project</a>
+        <a class="btn" href="blender/index.html">Open Blender</a>
       </article>
 
       <article class="card">
         <h2>Rotoscope: Live Action</h2>
         <p class="muted">
-          Includes: Live Action Video, Final Video, Credits/Disclaimer,
-          Procedure, Weekly Progress.
+          Live Action • Final Video • Credits • Procedure • Weekly Progress
         </p>
-        <a class="btn" href="./rotoscope.html">Open Rotoscope Project</a>
+        <a class="btn" href="rotoscope/index.html">Open Rotoscope</a>
       </article>
     </section>
   </main>
@@ -55,6 +75,6 @@
     </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
