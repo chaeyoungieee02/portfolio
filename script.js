@@ -3,7 +3,7 @@ document.querySelectorAll("#year").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Earth Age Calculator (works on blender/calculator.html)
+// Earth Age Calculator
 const ageInput = document.getElementById("age");
 const calcBtn = document.getElementById("calcBtn");
 const result = document.getElementById("result");
@@ -21,13 +21,35 @@ if (ageInput && calcBtn && result) {
 
   calcBtn.addEventListener("click", () => {
     const earthAge = parseFloat(ageInput.value);
-
     if (Number.isNaN(earthAge) || earthAge < 0) {
       result.textContent = "Please enter a valid age.";
       return;
     }
-
     const lines = planets.map((p) => `${p.name}: ${(earthAge / p.period).toFixed(2)} years`);
     result.textContent = `Earth: ${earthAge.toFixed(2)} years\n` + lines.join("\n");
   });
 }
+
+// Mobile dropdown toggle
+document.querySelectorAll(".dropdown > a").forEach((a) => {
+  a.addEventListener("click", (e) => {
+    if (window.matchMedia("(max-width: 900px)").matches) {
+      const parent = a.parentElement;
+      const menu = parent.querySelector(".dropdown-menu");
+      if (!menu) return;
+
+      e.preventDefault();
+      parent.classList.toggle("open");
+
+      document.querySelectorAll(".dropdown.open").forEach((d) => {
+        if (d !== parent) d.classList.remove("open");
+      });
+    }
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown.open").forEach((d) => d.classList.remove("open"));
+  }
+});
