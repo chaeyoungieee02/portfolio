@@ -1,36 +1,222 @@
-// Footer year
-const yearSpans = document.querySelectorAll("#year");
-yearSpans.forEach((el) => (el.textContent = new Date().getFullYear()));
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #6b6b6b;
+  --line: #e9e9e9;
+  --card: #fcfcfc;
+}
 
-// Earth Age Calculator (only works on blender page where elements exist)
-const ageInput = document.getElementById("age");
-const calcBtn = document.getElementById("calcBtn");
-const result = document.getElementById("result");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-if (ageInput && calcBtn && result) {
-  const planets = [
-    { name: "Mercury", period: 0.24 },
-    { name: "Venus", period: 0.62 },
-    { name: "Mars", period: 1.88 },
-    { name: "Jupiter", period: 11.86 },
-    { name: "Saturn", period: 29.46 },
-    { name: "Uranus", period: 84.01 },
-    { name: "Neptune", period: 164.8 },
-  ];
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-  calcBtn.addEventListener("click", () => {
-    const earthAge = parseFloat(ageInput.value);
+.container {
+  width: min(1000px, 92%);
+  margin: 0 auto;
+}
 
-    if (isNaN(earthAge) || earthAge < 0) {
-      result.textContent = "Please enter a valid age.";
-      return;
-    }
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  position: sticky;
+  top: 0;
+}
 
-    const lines = planets.map((p) => {
-      const age = earthAge / p.period;
-      return `${p.name}: ${age.toFixed(2)} years`;
-    });
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
 
-    result.textContent = `Earth: ${earthAge.toFixed(2)} years\n` + lines.join("\n");
-  });
+.logo {
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.hero,
+.page-head {
+  padding: 3.2rem 0 2rem;
+}
+
+.tag {
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.btn {
+  margin-top: 0.9rem;
+  display: inline-block;
+  border: 1px solid #111;
+  color: #111;
+  background: #fff;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.placeholder {
+  border: 1px dashed #c9c9c9;
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--muted);
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.empty-text {
+  color: var(--muted);
+}
+
+.calculator {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 360px;
+}
+
+.calculator input {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+
+.result {
+  margin-top: 0.5rem;
+  white-space: pre-line;
+}
+
+.script-box {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--muted);
+  overflow-x: auto;
+}
+
+.weeks-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.week {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  color: #333;
+  background: #fff;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .grid.two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .weeks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-wrap {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-start;
+  }
+
+  .weeks-grid {
+    grid-template-columns: 1fr;
+  }
 }
