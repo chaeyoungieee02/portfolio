@@ -4,19 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Home</title>
-  <link rel="stylesheet" href="styles.css?v=100" />
+  <link rel="stylesheet" href="styles.css?v=101" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="logo" href="index.html">PORTFOLIO</a>
-
       <nav>
         <ul class="nav-links">
           <li><a class="active" href="index.html">Home</a></li>
 
           <li class="dropdown">
-            <a href="blender/index.html">Blender ▾</a>
+            <button type="button" class="dropdown-toggle">Blender ▾</button>
             <ul class="dropdown-menu">
               <li><a href="blender/video.html">Video</a></li>
               <li><a href="blender/description.html">Description</a></li>
@@ -27,7 +26,7 @@
           </li>
 
           <li class="dropdown">
-            <a href="rotoscope/index.html">Rotoscope ▾</a>
+            <button type="button" class="dropdown-toggle">Rotoscope ▾</button>
             <ul class="dropdown-menu">
               <li><a href="rotoscope/live-action.html">Live Action Video</a></li>
               <li><a href="rotoscope/final-video.html">Final Video</a></li>
@@ -45,20 +44,17 @@
     <section class="hero">
       <p class="tag">Minimalist Student Portfolio</p>
       <h1>Multimedia Portfolio</h1>
-      <p class="subtitle">A clean multi-page site with separate pages for every requirement.</p>
+      <p class="subtitle">Only subitems are clickable in the dropdown menus.</p>
     </section>
 
     <section class="grid two-col">
       <article class="card">
         <h2>Blender: Solar System</h2>
         <p class="muted">Video • Description • Method • Earth Age Calculator • Script</p>
-        <a class="btn" href="blender/index.html">Open Blender</a>
       </article>
-
       <article class="card">
         <h2>Rotoscope: Live Action</h2>
         <p class="muted">Live Action • Final Video • Credits • Procedure • Weekly Progress</p>
-        <a class="btn" href="rotoscope/index.html">Open Rotoscope</a>
       </article>
     </section>
   </main>
@@ -69,6 +65,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=100"></script>
+  <script src="script.js?v=101"></script>
 </body>
 </html>
