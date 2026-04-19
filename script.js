@@ -1,20 +1,26 @@
-// Mobile dropdown toggle
-const dropdownLinks = document.querySelectorAll(".dropdown > a");
+// Mobile dropdown toggle for non-clickable button titles
+const dropdownButtons = document.querySelectorAll(".dropdown > .dropdown-toggle");
 
-dropdownLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
+dropdownButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
     if (window.matchMedia("(max-width: 1080px)").matches) {
-      const parent = link.parentElement;
-      const menu = parent.querySelector(".dropdown-menu");
-      if (!menu) return;
+      e.preventDefault();
+      const parent = btn.parentElement;
+      const isOpen = parent.classList.contains("open");
 
-      // first tap opens menu, second tap follows link
-      if (!parent.classList.contains("open")) {
-        e.preventDefault();
-        document.querySelectorAll(".dropdown.open").forEach((d) => {
-          if (d !== parent) d.classList.remove("open");
-        });
+      // close others
+      document.querySelectorAll(".dropdown.open").forEach((d) => {
+        d.classList.remove("open");
+        const b = d.querySelector(".dropdown-toggle");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+
+      // toggle current
+      if (!isOpen) {
         parent.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+      } else {
+        btn.setAttribute("aria-expanded", "false");
       }
     }
   });
@@ -23,6 +29,10 @@ dropdownLinks.forEach((link) => {
 // close when clicking outside
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".dropdown")) {
-    document.querySelectorAll(".dropdown.open").forEach((d) => d.classList.remove("open"));
+    document.querySelectorAll(".dropdown.open").forEach((d) => {
+      d.classList.remove("open");
+      const b = d.querySelector(".dropdown-toggle");
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
   }
 });
