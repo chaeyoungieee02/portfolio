@@ -1,6 +1,9 @@
-const yearSpans = document.querySelectorAll("#year");
-yearSpans.forEach((el) => (el.textContent = new Date().getFullYear()));
+// Footer year
+document.querySelectorAll("#year").forEach((el) => {
+  el.textContent = new Date().getFullYear();
+});
 
+// Earth Age Calculator (works on blender/calculator.html)
 const ageInput = document.getElementById("age");
 const calcBtn = document.getElementById("calcBtn");
 const result = document.getElementById("result");
@@ -19,16 +22,12 @@ if (ageInput && calcBtn && result) {
   calcBtn.addEventListener("click", () => {
     const earthAge = parseFloat(ageInput.value);
 
-    if (isNaN(earthAge) || earthAge < 0) {
+    if (Number.isNaN(earthAge) || earthAge < 0) {
       result.textContent = "Please enter a valid age.";
       return;
     }
 
-    const lines = planets.map((p) => {
-      const age = earthAge / p.period;
-      return `${p.name}: ${age.toFixed(2)} years`;
-    });
-
+    const lines = planets.map((p) => `${p.name}: ${(earthAge / p.period).toFixed(2)} years`);
     result.textContent = `Earth: ${earthAge.toFixed(2)} years\n` + lines.join("\n");
   });
 }
